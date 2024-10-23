@@ -1,10 +1,114 @@
-# Sitio Web de Guitarras Extrañas
-
-Este es un sitio web de prueba que presenta guitarras extrañas y únicas. Fue creado utilizando tecnologías web básicas: HTML, CSS y JavaScript. El sitio muestra algunos de los modelos más inusuales y extravagantes.
-
-## Tecnologías Utilizadas
-
-- **HTML**: Para la estructura del sitio web.
-- **CSS**: Para el diseño y la presentación visual.
-- **JavaScript**: Para la funcionalidad interactiva.
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 5 guitarras</title>
+    <link rel = "stylesheet" href="eguit.css">
+    <link href="broma.py">
+    <!--Primer proyecto personal mio, deseadme suerte-->
+</head>
+<body>
+    <div id= 'container'>
+        <header>
+            <h1>Hoy presentamos: Top 5 guitarras</h1>
+        </header>
+        <hr>
+        <nav>
+            <ul>
+                <li><a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwj9uZOm0JOJAxVjSDABHa8mJ9YQtwJ6BAgREAI&url=https%3A%2F%2Fm.youtube.com%2Fwatch%3Fv%3DYGVQ-eg2FWo&usg=AOvVaw2UwbIQ7pe_epgFxmZA76Du&opi=89978449">Fuente 1</a></li>
+                <li><a href="https://youtu.be/dQw4w9WgXcQ?si=wxstFcTZFNEBtayq">Press it</a></li>
+                <li><a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwj9uZOm0JOJAxVjSDABHa8mJ9YQtwJ6BAgREAI&url=https%3A%2F%2Fm.youtube.com%2Fwatch%3Fv%3DYGVQ-eg2FWo&usg=AOvVaw2UwbIQ7pe_epgFxmZA76Du&opi=89978449">Fuente 3</a></li>
+                <li><a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwj9uZOm0JOJAxVjSDABHa8mJ9YQtwJ6BAgREAI&url=https%3A%2F%2Fm.youtube.com%2Fwatch%3Fv%3DYGVQ-eg2FWo&usg=AOvVaw2UwbIQ7pe_epgFxmZA76Du&opi=89978449">Fuente 4</a></li>
+                <li><a href="https://youtu.be/RIsjU6jHO5Y?si=2zk3I2IraYR72rxw">Fuente: miami me lo confirmo</a></li>
+            </ul>
+        </nav>
+        <div class = "clearfix">
+            <hr>
+            <section id = "content">
+                <article class = 'article'>
+                    <h2>NUMERO UNO: guitarra cucaracha</h2>
+                    <p><i>En esta ocasión podemos apreciar una guitarra avistada en una calle con una forma peculiar, la forma de un 
+                        insecto que todos amamos. Adjuntamos prueba...
+                    </i></p>
+                    <div class="contenedor">
+                        <button id="meinbutton">
+                        cucatarra
+                    </button>
+<span id="tooltip" style="display: none;"><img src="cucatarra.jpg"></span>
+</div>
+                </article>
+                <article class = 'article'>
+                    <h2>NUMERO DOOS: guitarra QUEESOOO</h2>
+                    <p><i>presentamos la guitarra queso, con amor</i></p>
+                    <div id="popup2">
+                        <button>More cheez</button>
+                    </div>
+                </article>
+                <article class="article">
+                    <h2>NUMERO TREES: Guitarra pistola</h2>
+                    <p>Por si las moscas dicen</p>
+                    <button id="popup3">
+                        PUM
+                    </button>
+                </article>
+                <article class="article">
+                    <h2>NUMERO CUATROO: Guitagui</h2>
+                    <p><i>En esta ocasión podeos apreciar una peculiar guitarra la cual empieza como una 'gui', continua 'ta' pero culmina de nuevo con 'GUI'</i></p>
+                    <button id="popup4">
+                        Watafac
+                    </button>
+                </article>
+                <article>
+                    <h2>QUINTA Y ULTIMAAAAA LA PODEROSISIMA DEFECASTER</h2>
+                    <p>Hecha por Lucho, un saludo y sin mas comentarios</p>
+                    <button id = "joder">
+                        Uyuyuy que desgracia
+                    </button>
+                </article>
+                <article class="article">
+                    <h1>Las guitarras:</h1>
+                    <p>Dejamos las imágenes de estas y más guitarras en una linda galería, sin más que añadir, adiós.</p>
+                </article>
+            </section>
+        </div>
+        <aside>
+            <h1><i>Deje sus comentarios</i></h1>
+            <form>
+                <label>Deje su nombre</label>
+                <input type="text"><br>
+                <label>Deje su Email</label>
+                <input type="url"> <br>
+                <label>Ahora si, deje sus comentarios al respecto</label><br>
+                <input type="text">
+                <button id="fickdich">
+                    Enviar comentarios  
+                </button>
+                <span id="ohno" style="display: none;">JDSFJKDSAJK DE VERDAD CREIA QUE YO IBA A LEER SUS COMENTARIOS</span>
+            </form>
+        </aside>
+         <section id="shet">
+            <img src="cucatarra.jpg">
+            <img src="https://playguitar.com/wp-content/uploads/2011/08/cheeseguitar.jpg">
+            <img src="https://playguitar.com/wp-content/uploads/2011/08/coltpeacemaker-300x195.jpg">
+            <img src="https://playguitar.com/wp-content/uploads/2011/08/mirror-guitar-175x300.jpg">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsAR1351yjTbTk0Xj-JLSMLMd7ZylJCCoLDw&s">
+            <img src="https://playguitar.com/wp-content/uploads/2011/08/ANGEL_Classic_V-300x131.jpg">
+            <img src="https://playguitar.com/wp-content/uploads/2011/08/bfoot-hand1-116x300.jpg">
+            <img src="https://playguitar.com/wp-content/uploads/2011/08/Broad-Sword-300x224.jpg">
+            <img src="https://playguitar.com/wp-content/uploads/2011/08/hands-DeGennaro1.jpg">
+            <img src="https://playguitar.com/wp-content/uploads/2011/08/lego-guitar-300x223.jpg">
+            <img src="https://playguitar.com/wp-content/uploads/2011/08/Loveheart-triple-guitar.jpg">
+            <img src="https://playguitar.com/wp-content/uploads/2011/08/mcswain-car-guitar-1967-Stephen-McSwain-300x121.jpg">
+            <img src="https://playguitar.com/wp-content/uploads/2011/08/Melon-guitar-300x183.jpg">
+            <img src="https://playguitar.com/wp-content/uploads/2011/08/pacman-smosh-185x300.jpg">
+            <img src="https://playguitar.com/wp-content/uploads/2011/08/Pikasso-musicgadgets.jpg">
+            <img src="https://playguitar.com/wp-content/uploads/2011/08/Poodle-Guitar.jpg">
+         </section>
+        <footer>
+            <b>Esta estupidez de página fue creada por: J. Duarte</b>
+        </footer>
+    </div>
+    <script src="magik.js"></script>
+</body>
+</html>
