@@ -2,9 +2,134 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top 5 guitarras</title>
-    <link rel = "stylesheet" href="eguit.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Top 5 guitarras</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background-color: lightgray;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+  }
+   h3 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: xx-large;
+  }
+  h1{
+    color: black
+  }
+  nav {
+    background-color: gray;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 55px;
+    width: 100%;
+    border-bottom: 3px dashed black; /* Franja divisoria en el nav */
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  nav li {
+    margin-right: 20px;
+  }
+  nav li:last-child {
+    margin-right: 0;
+  }
+  header {
+    background-color: black;
+    color: yellow;
+    text-align: center;
+    width: 100%;
+    line-height: 100px;
+  }
+  footer {
+    background-color: black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: azure;
+    text-align: center;
+    height: 70px;
+    line-height: 70px;
+    margin-top: auto; /* Mantener el footer en la parte inferior */
+  }
+  .contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  article {
+    flex: 1;
+    text-align: left;
+    padding: 15px;
+    background-color: white;
+  }
+  .article {
+    color: black;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid purple; /* Franja divisoria entre artículos */
+  }
+  .article:first-child {
+    border-top: none; /* Evitar franja adicional en el primer artículo */
+  }
+  aside {
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: skyblue;
+    width: 20%;
+    padding: 15px;
+    height: calc(100vh - 70px); /* Restar la altura del footer */
+    color: black;
+    overflow-y: auto;
+  }
+  .clearfix {
+    clear: both;
+  }
+  #tooltip {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+#shet {
+  display: flex;
+  width: 80%;
+  height: 430px;
+  margin: 0px;
+  padding: 0px;
+}  
+section img {
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: .8;
+  transition: .5 ease;
+}
+section img:hover{
+  cursor: crosshair;
+  width:300px;
+  opacity: 1;
+  filter: contrast(120%)
+}
+    </style>
     <link href="broma.py">
     <!--Primer proyecto personal mio, deseadme suerte-->
 </head>
@@ -109,6 +234,74 @@
             <b>Esta estupidez de página fue creada por: J. Duarte</b>
         </footer>
     </div>
-    <script src="magik.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+    const boton = document.getElementById('meinbutton');
+    const tooltip = document.getElementById('tooltip');
+    boton.addEventListener('mouseover', function() {
+      tooltip.style.display = 'block';
+      const rect = boton.getBoundingClientRect();
+      tooltip.style.top = (rect.bottom + window.scrollY) + 'px';
+      tooltip.style.left = (rect.left + window.scrollX + (rect.width - tooltip.offsetWidth) / 2) + 'px';
+    });
+    boton.addEventListener('mouseout', function() {
+      tooltip.style.display = 'none';
+    });
+  });
+  function crearPopup(contenido, idImagen) {
+    return function() {
+      // Comprobar si ya existe un pop-up y eliminarlo
+      let existente = document.querySelector('.popup');
+      if (existente) {
+        document.body.removeChild(existente);
+      }
+      // Crear el contenedor del pop-up
+      const popup = document.createElement('div');
+      popup.className = 'popup';
+      popup.style.position = 'fixed';
+      popup.style.left = '50%';
+      popup.style.top = '50%';
+      popup.style.transform = 'translate(-50%, -50%)';
+      popup.style.backgroundColor = 'white';
+      popup.style.padding = '20px';
+      popup.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.3)';
+      popup.style.zIndex = '1000';
+      // Añadir el texto al pop-up
+      const texto = document.createElement('p');
+      texto.innerText = contenido;
+      popup.appendChild(texto);
+      // Añadir una imagen al pop-up
+      const imagen = document.createElement('img');
+      imagen.src = idImagen; // Reemplaza con la URL de tu imagen
+      imagen.style.width = '100%';
+      imagen.style.marginTop = '10px';
+      popup.appendChild(imagen);
+      // Botón para cerrar el pop-up
+      const botonCerrar = document.createElement('button');
+      botonCerrar.innerText = 'Cerrar';
+      botonCerrar.style.marginTop = '10px';
+      botonCerrar.addEventListener('click', function() {
+        document.body.removeChild(popup);
+      });
+      popup.appendChild(botonCerrar);
+      document.body.appendChild(popup);
+    }
+  }
+  // Añadir event listeners a cada botón
+  document.getElementById('popup2').addEventListener('click', crearPopup('Cheddarra', 'https://playguitar.com/wp-content/uploads/2011/08/cheeseguitar.jpg'));
+  document.getElementById('popup3').addEventListener('click', crearPopup('Pistolarra', 'https://playguitar.com/wp-content/uploads/2011/08/coltpeacemaker-300x195.jpg'));
+  document.getElementById('popup4').addEventListener('click', crearPopup('Guitagui', 'https://playguitar.com/wp-content/uploads/2011/08/mirror-guitar-175x300.jpg'));
+  document.getElementById('joder').addEventListener('click', crearPopup('Defecaster', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsAR1351yjTbTk0Xj-JLSMLMd7ZylJCCoLDw&s'));
+  document.getElementById('fickdich').addEventListener('mouseover', function() {
+    var tooltip = document.getElementById('ohno');
+    tooltip.style.display = 'block';
+    var rect = this.getBoundingClientRect();
+    tooltip.style.top = (rect.top + window.scrollY - tooltip.offsetHeight) + 'px';
+    tooltip.style.left = (rect.left + window.scrollX + (rect.width - tooltip.offsetWidth) / 2) + 'px';
+  });
+  document.getElementById('fickdich').addEventListener('mouseout', function() {
+    document.getElementById('ohno').style.display = 'none';
+  });
+    </script>
 </body>
 </html>
